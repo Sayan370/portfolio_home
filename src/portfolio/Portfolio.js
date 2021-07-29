@@ -1,5 +1,4 @@
 import React,{useState,useEffect} from 'react'
-import {Link } from "react-router-dom";
 import axios from 'axios';
 import PortfolioContent from '../portfolioContent/PortfolioContent';
 import env from "react-dotenv";
@@ -96,12 +95,10 @@ const Portfolio = () => {
                         <div className="row portfolio-foot-detail">
                             <div className="col-6 col-lg-3 offset-lg-6 text-left pl-4">
                                 <span className="p-text">We've Completed More Then</span>
-                                <h4 className="p-num">530</h4>
+                                <h4 className="p-num">100</h4>
                                 <span className="p-text">Projects for Our amazing Clients</span>
                             </div>
-                            <div className="col-6 col-lg-3  d-flex justify-content-end align-items-center">
-                                <Link to="assests/standalone.html" className="btn btn-main yellow-btn rounded-pill mt-3">View All</Link><span></span><span></span><span></span><span></span>
-                            </div>
+                         
                         </div>
                     </div>
                 </div>

@@ -14,13 +14,14 @@ const Home = () => {
             <div className="col-12 col-md-6 height d-flex align-items-center text-left">
                 <div className="text d-flex align-items-center">
                     <div className="home-text text-black height1">
-                        <h6 className="sub-heading mb-2">Beautiful and Responsive</h6>
-                        <h1 className="main-heading mb-0">Creative Websites</h1>
+                        <h6 className="sub-heading mb-2">Sover and Perfect</h6>
+                        <h1 className="main-heading mb-0">Creative Designs</h1>
                         <h4 className="heading mb-3">Simple & Easy</h4>
+                        <p>Good design’s not about what medium you’re working in. It’s about thinking hard about what you want to do</p>
 
                         <Link
-    activeClass="active"
-    to="blog"
+    
+    to="gallery"
     spy={true}
     smooth={true}
     offset={-70}
@@ -32,7 +33,7 @@ const Home = () => {
             </div>
             <div className="col-6">
                 <div className="large-logo">
-                    <img src="https://megaone.acrothemes.com/digital-marketing/img/logo-large.png" alt="img" />
+                    <img src="assests/Pic2.png" alt="img" />
                 </div>
 
                 <div className="plant1">
@@ -61,10 +62,14 @@ const Home = () => {
                 <div className="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-12 text-center">
                     <div className="text">
                         <div className="home-text text-black">
-                            <h1 className="main-heading mb-4">We are Digital Agency</h1>
-                            <p className="sub-heading mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                 aliqua</p>
-                            <Link to="#" className="btn btn-slider pink-btn rounded-pill">Learn More</Link>
+                            <h1 className="main-heading mb-4">About</h1>
+                            <p className="sub-heading mb-4">Hello, Welcome To My Portfolio
+                                 </p>
+                            <Link  to="contact"
+    spy={true}
+    smooth={true}
+    offset={-70}
+    duration={500} className="btn btn-slider pink-btn rounded-pill">Contact Now</Link>
                         </div>
                     </div>
                 </div>
@@ -88,7 +93,7 @@ const Home = () => {
                             <i className="far fa-copy"></i>
                         </div>
                         <div className="card-body">
-                            <p className="card-text sub-heading text-black">Your business is our top priority.</p>
+                            <p className="card-text sub-heading text-black">Top Quality Graphic & Multimedia Designer.</p>
                         </div>
                     </div>
 
@@ -141,7 +146,7 @@ const Home = () => {
                                         <i className="fas fa-users"></i>
                                     </div>
                                     <div className="stats-box-text ml-4">
-                                        <h1 className="numbering">500+</h1>
+                                        <h1 className="numbering">50+</h1>
                                         <p className="sub-heading">Happy Clients</p>
                                     </div>
                                 </div>
@@ -153,8 +158,8 @@ const Home = () => {
                                     <i className="fas fa-list"></i>
                                 </div>
                                 <div className="stats-box-text ml-4">
-                                    <h1 className="numbering">10740+</h1>
-                                    <p className="sub-heading">Lines of Code</p>
+                                    <h1 className="numbering">200+</h1>
+                                    <p className="sub-heading">Graphics</p>
                                 </div>
                             </div>
                         </div>
@@ -165,7 +170,7 @@ const Home = () => {
                                     <i className="fas fa-check"></i>
                                 </div>
                                 <div className="stats-box-text ml-4">
-                                    <h1 className="numbering">200+</h1>
+                                    <h1 className="numbering">20+</h1>
                                     <p className="sub-heading">Project Completed</p>
                                 </div>
                             </div>
@@ -194,7 +199,11 @@ const Home = () => {
                 <h1 className="main-heading mt-3 mb-4"><span className="text-yellow">Robust Design</span> and Development Solutions</h1>
                 <p className="sub-heading mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod tempor incididunt ut
                     aliq. Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                <Link to="#" className="btn btn-main pink-btn rounded-pill mt-3">Start Now</Link>
+                <Link to="contact"
+    spy={true}
+    smooth={true}
+    offset={-70}
+    duration={500} className="btn btn-main pink-btn rounded-pill mt-3">Contact Now</Link>
             </div>
         </div>
         </div>

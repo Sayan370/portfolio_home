@@ -18,7 +18,7 @@ const Header = () => {
     <nav id="my-nav1" className="navbar navbar-expand-lg navbar-light rounded-bar transparent-bar">
 
         <div className="logo small-screen">
-            <Link to="#home" className="scroll"><img src="https://megaone.acrothemes.com/digital-marketing/img/logo.png" alt="Logo Img" /></Link>
+            <Link to="#home" className="scroll"><img src="assests/logo.png" style={{width: '100px'}} alt="Logo Img" /></Link>
         </div>
 
         <div className="container bg-trans-color">
@@ -27,7 +27,7 @@ const Header = () => {
                     <div className="collapse navbar-collapse">
                         <div className="col-3 col-md-2 col-lg-3 text-left p-0">
                             <div className="logo">
-                                <Link to="#home" className="scroll"><img src="https://megaone.acrothemes.com/digital-marketing/img/logo.png" alt="Logo Img" /></Link>
+                                <Link to="#home" className="scroll"><img src="assests/logo.png" style={{width: '100px'}} alt="Logo Img" /></Link>
                             </div>
                         </div>
                         <div className="col-6 p-0">
@@ -71,9 +71,9 @@ const Header = () => {
 
                         <div className="col-3 text-right p-0">
                             <div className="banner-icons">
-                            <Link to="#"><i className="lab la-facebook-f icons fb"></i></Link>
-                            <Link to="#"><i className="lab la-twitter icons twt"></i></Link>
-                            <Link to="#"><i className="lab la-instagram icons inst"></i></Link>
+                            <a href="mailto:bhattacharjeeakash03@gmail.com"><i className="las la-envelope icons fb"></i></a>
+                            <a href="https://api.whatsapp.com/send?phone=+917980198773&text=Hello I have a requirement."><i className="lab la-whatsapp icons twt"></i></a>
+                            <a href="https://www.instagram.com/akash_design_wings/"><i className="lab la-instagram icons inst"></i></a>
                             </div>
                         </div>
                     </div>
@@ -132,11 +132,11 @@ const Header = () => {
 
             <div className="side-footer w-100">
                 <div className="banner-icons">
-                    <Link to="#"><i className="lab la-facebook-f icons"></i></Link>
-                    <Link to="#"><i className="lab la-twitter icons"></i></Link>
-                    <Link to="#"><i className="lab la-instagram icons"></i></Link>
+                    <a href="mailto:bhattacharjeeakash03@gmail.com"><i className="las la-envelope icons"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=+917980198773&text=Hello I have a requirement."><i className="lab la-whatsapp icons"></i></a>
+                    <a href="https://www.instagram.com/akash_design_wings/"><i className="lab la-instagram icons"></i></a>
                 </div>
-                <p>&copy; 2020 MegaOne. Made With Love by Themesindustry.</p>
+                <p>&copy; 2021 Akash Design. Made by <a href="https://api.whatsapp.com/send?phone=+917003369682&text=Hello I have a requirement.">Webscapes</a></p>
             </div>
         </div>
     </div>

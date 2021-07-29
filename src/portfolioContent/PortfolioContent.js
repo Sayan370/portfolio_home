@@ -1,5 +1,4 @@
 import React,{useEffect,useState} from 'react'
-import {Link } from "react-router-dom";
 import axios from 'axios';
 import env from "react-dotenv";
 
@@ -63,9 +62,9 @@ const [catTitle,setCattitle]=useState(null);
         
         <>
             <div className={"cbp-item " + data.category}>
-                            <Link to="" className="cbp-caption cbp-lightbox" data-title="Workout Buddy<br>by Tiberiu Neamu">
+                            <a href={`${env.IMG_URL}images/` + data.photo} className="cbp-caption cbp-lightbox" data-title={catTitle+"<br>by Akash Bhattacharjee"}>
                                 <div className="cbp-caption-defaultWrap">
-                                    <img src={`${env.IMG_URL}images/` + data.photo} alt="img" />
+                                    <img src={`${env.IMG_URL}images/` + data.photo} alt="img" className="portfolio-img" />
                                 </div>
                                 <div className="cbp-caption-activeWrap portfolio-hover-effect d-flex align-items-end">
                                     <div className="hover-text">
@@ -73,7 +72,7 @@ const [catTitle,setCattitle]=useState(null);
                                         <p className="p-hover-des">{data.title}</p>
                                     </div>
                                 </div>
-                            </Link>
+                            </a>
                         </div>
         </>
     )

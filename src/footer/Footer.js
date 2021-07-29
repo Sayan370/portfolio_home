@@ -46,15 +46,15 @@ const Footer = () => {
                 <div className="address-part ml-3">
                 <div className="address d-flex mb-4">
                     <i className="fas fa-map-marker-alt address-icon mr-3"></i>
-                    <p>123 Pak  Avenue, New York,<br/> United States</p>
+                    <p>Kolkata, India</p>
                 </div>
                 <div className="address d-flex mb-4">
                     <i className="fas fa-phone-volume address-icon mr-3"></i>
-                    <p>+1 631 12345678<span className="ml-3">  +1 631 12345678 </span> </p>
+                    <p>+917980198773 </p>
                 </div>
                 <div className="address d-flex mr-3">
                     <i className="fas fa-paper-plane address-icon mr-3"></i>
-                    <p>email@website.com</p>
+                    <p>bhattacharjeeakash03@gmail.com</p>
                 </div>
                 </div>
 
@@ -73,13 +73,12 @@ const Footer = () => {
             <div className="col-12 col-md-5">
                 <ul className="footer_ul mb-50">
                     <li className="footer_list"><i className="lab la-facebook-f fb"></i></li>
-                    <li className="footer_list"><i className="lab la-twitter twt"></i></li>
-                    <li className="footer_list"><i className="lab la-google-plus gogle"></i></li>
-                    <li className="footer_list"><i className="lab la-linkedin-in link"></i></li>
-                    <li className="footer_list"><i className="lab la-instagram inst"></i></li>
-                    <li className="footer_list"><i className="las la-envelope gmail"></i></li>
+                    <li className="footer_list"><a href="https://api.whatsapp.com/send?phone=+917980198773&text=Hello I have a requirement."><i className="lab la-whatsapp twt"></i></a></li>
+                    <li className="footer_list"><a href="https://www.linkedin.com/in/akash-bhattacharjee-6ab9231b6/"><i className="lab la-linkedin-in link"></i></a></li>
+                    <li className="footer_list"><a href="https://www.instagram.com/akash_design_wings/?hl=en"><i className="lab la-instagram inst"></i></a></li>
+                    <li className="footer_list"><a href="mailto:bhattacharjeeakash03@gmail.com"><i className="las la-envelope gmail"></i></a></li>
                 </ul>
-                <p className="info footer_text ml-3"><i className="far fa-copyright"></i>2020 MegaOne. Made with love by themesindustry</p>
+                <p className="info footer_text ml-3"><i className="far fa-copyright"></i>2021 Akash Design. Made by <a href="https://api.whatsapp.com/send?phone=+917003369682&text=Hello I have a requirement.">Webscapes</a></p>
 
             </div>
         </div>
