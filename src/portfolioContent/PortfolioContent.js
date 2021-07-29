@@ -26,7 +26,7 @@ const [catTitle,setCattitle]=useState(null);
         const formData1 = new FormData();
         formData1.append('id', datas);
    
-        await axios.post('http://18.119.126.245:5000/category/find',formData1)
+        await axios.post(`${process.env.API_URL}/category/find`,formData1)
         .then(res => {
     
            if(res.status===200){

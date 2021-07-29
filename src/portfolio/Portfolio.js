@@ -22,7 +22,7 @@ const Portfolio = () => {
   
   
       const fetch=async() => {
-        const result = await axios("http://18.119.126.245:5000/portfolio/records/");
+        const result = await axios(`${process.env.API_URL}/portfolio/records/`);
 
       console.log(result.data);
        
@@ -31,7 +31,7 @@ const Portfolio = () => {
       };
 
       const  getCategory= async ()=>{
-        await axios.get('http://18.119.126.245:5000/category/records')
+        await axios.get(`${process.env.API_URL}/category/records`)
           .then(res => {
       
              if(res.status===200){
