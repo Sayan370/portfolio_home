@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import {Link } from "react-router-dom";
 import axios from 'axios';
 import PortfolioContent from '../portfolioContent/PortfolioContent';
+import env from "react-dotenv";
 
 const Portfolio = () => {
 
@@ -15,6 +16,7 @@ const Portfolio = () => {
         getCategory();
         fetch();
 
+
       
       
       },[]);
@@ -22,16 +24,15 @@ const Portfolio = () => {
   
   
       const fetch=async() => {
-        const result = await axios(`${process.env.API_URL}/portfolio/records/`);
+        const result = await axios(`${env.API_URL}portfolio/records/`);
 
-      console.log(result.data);
        
         setPortfolio(result.data);
        
       };
 
       const  getCategory= async ()=>{
-        await axios.get(`${process.env.API_URL}/category/records`)
+        await axios.get(env.API_URL+`category/records`)
           .then(res => {
       
              if(res.status===200){
@@ -56,6 +57,7 @@ const Portfolio = () => {
       
           })
           .catch(err => {
+            console.log(err.message,4000);
              return false;
           });
       
