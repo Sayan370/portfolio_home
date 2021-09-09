@@ -1,5 +1,6 @@
-.portfolio-img {
-  width: 538px !important;
-  height: 447px !important;
-  object-fit: cover !important;
+.side-menu.hidden {
+  display: block !important;
+}
+.rs-alert {
+  top: 120px !important;
 }

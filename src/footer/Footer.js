@@ -1,6 +1,63 @@
-import React from 'react'
+import React,{useState,useRef} from 'react'
+import { Alert, Form } from 'rsuite';
+import axios from 'axios';
+import env from "react-dotenv";
 
 const Footer = () => {
+    const ref = useRef();
+
+    const [newUser, setNewUser] = useState(
+        {
+            name: '',
+            email: '',
+            phone: '',
+            message: '',
+           
+        }
+    );
+
+ 
+  
+    
+  const handleSubmit = () => {
+    //e.preventDefault();
+    const formData = new FormData();
+    formData.append('name', newUser.name);
+    formData.append('email', newUser.email);
+    formData.append('phone', newUser.phone);
+    formData.append('message', newUser.message);
+
+    setNewUser({name: "",email: "", phone: "", message: ""})
+   
+
+    axios.post(`${env.API_URL}contact/add/`, formData)
+         .then(res => {
+           
+
+            if(res.status===200){
+
+              
+            
+            Alert.success(res.data, 5000);
+            }else{
+
+              Alert.error(res.data, 5000);
+            }
+         })
+         .catch(err => {
+            
+            Alert.error(err.message, 5000);
+         });
+}
+
+
+
+const handleChange = (e) => {
+  setNewUser({...newUser, [e.target.name]: e.target.value});
+}
+
+
+
     return (
         <>
         <section id={"contact"} className="contact">
@@ -12,34 +69,34 @@ const Footer = () => {
         </div>
         <div className="row">
             <div className="col-12 col-md-7">
-                <form className="contact-form" id="contact-form-data">
+                <Form className="contact-form" onSubmit={handleSubmit} encType='multipart/form-data' ref={ref}>
                     <div className="row mt-5">
                         <div className="col-sm-12" id="result"></div>
                     </div>
                         <div className="row">
                             <div className="col-12 col-md-5">
                             <div className="form-group">
-                                <input className="form-control" type="text" placeholder="Your Name" required  id="candidate_name" name="userName" />
+                                <input className="form-control" type="text" name="name" placeholder="Your Name" value={newUser.name} onChange={handleChange} required  id="candidate_name" />
                             </div>
 
                             <div className="form-group">
-                                <input className="form-control" type="email" placeholder="Email Address*" required  id="user_email" name="userEmail" />
+                                <input className="form-control" type="email" name="email" placeholder="Email Address*" value={newUser.email} onChange={handleChange} required  id="user_email"  />
                             </div>
 
                             <div className="form-group ">
-                                <input className="form-control" type="text" placeholder="Subject" id="user_subject" name="userSubject" />
+                                <input className="form-control" type="tel" name="phone" placeholder="Phone" id="user_subject" value={newUser.phone} onChange={handleChange}  />
                             </div>
                             </div>
 
                             <div className="col-12 col-md-7">
                                 <div className="form-group ">
-                                    <textarea className="form-control" placeholder="Your Message" required rows="7" id="user_message" name="userMessage"></textarea>
+                                    <textarea className="form-control" placeholder="Your Message" name="message" required rows="7" value={newUser.message} onChange={handleChange} id="user_message"></textarea>
                                 </div>
                             </div>
                         </div>
 
-                    <button type="button" className="btn btn-slider pink-btn rounded-pill w-100 contact_btn" id="submit_btn"><i className="fa fa-spinner fa-spin mr-2 d-none" aria-hidden="true"></i> <b>Send Message</b></button>
-                </form>
+                    <button type="submit" className="btn btn-slider pink-btn rounded-pill w-100 contact_btn" id="submit_btn"><i className="fa fa-spinner fa-spin mr-2 d-none" aria-hidden="true"></i> <b>Send Message</b></button>
+                </Form>
             </div>
 
             <div className="col-12 col-md-5 mt-5">
@@ -84,7 +141,7 @@ const Footer = () => {
         </div>
 
     </div>
-    <svg className="right-square contact-square" viewBox="0 0 150 390" xmlns="http://www.w3.org/2000/svg">
+    <svg className="right-square contact-square" viewBox="0 0 130 390" xmlns="http://www.w3.org/2000/svg">
         <rect  x = "0" y = "32" width = "1616" height = "1616" rx="18" ry="18" fill="#000" transform = "rotate(-45 310 100)"/>
     </svg>
 </section>

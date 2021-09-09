@@ -1,7 +1,10 @@
 import React from 'react';
 import './App.css';
+import 'rsuite/dist/styles/rsuite-default.css'
+
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Home from './home/Home';
+
 
 function App() {
   return (
@@ -31,5 +34,7 @@ function App() {
   </BrowserRouter>
   );
 }
+
+
 
 export default App;

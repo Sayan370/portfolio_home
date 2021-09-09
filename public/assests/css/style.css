@@ -55,7 +55,7 @@ a {
 }
 .pink-btn {
   background-color: #fa2851;
-  color: #fff;
+  color: #fff !important;
   border: 1px solid #fa2851;
 }
 .pink-btn:hover {

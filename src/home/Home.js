@@ -1,10 +1,65 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import { Link } from "react-scroll";
 import Portfolio from '../portfolio/Portfolio';
 import Footer from '../footer/Footer';
 import Header from '../header/Header';
+import News from '../news/News';
+import axios from 'axios';
+import env from "react-dotenv";
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+
 
 const Home = () => {
+
+  
+  
+    const [latestNews, setLatestNews] = useState([]);
+   
+
+    
+    useEffect(() => {
+     
+      fetch();
+
+
+    
+    
+    },[]);
+
+
+
+    const fetch=async() => {
+      const result = await axios(`${env.API_URL}news/records/`);
+
+     
+     
+      setLatestNews(result.data);
+     
+    };
+
+
+    const responsive = {
+        superLargeDesktop: {
+          // the naming can be any, depends on you.
+          breakpoint: { max: 4000, min: 3000 },
+          items: 2
+        },
+        desktop: {
+          breakpoint: { max: 3000, min: 1024 },
+          items: 2
+        },
+        tablet: {
+          breakpoint: { max: 1024, min: 464 },
+          items: 2
+        },
+        mobile: {
+          breakpoint: { max: 767, min: 0 },
+          items: 1
+        }
+      };
+
+
     return (
         <>
 <Header/>
@@ -27,13 +82,13 @@ const Home = () => {
     offset={-70}
     duration={500}
     className="btn btn-slider pink-btn rounded-pill"
->Our Latest Work</Link>
+>My Latest Work</Link>
                     </div>
                 </div>
             </div>
             <div className="col-6">
                 <div className="large-logo">
-                    <img src="assests/Pic2.png" alt="img" />
+                   
                 </div>
 
                 <div className="plant1">
@@ -63,26 +118,29 @@ const Home = () => {
                     <div className="text">
                         <div className="home-text text-black">
                             <h1 className="main-heading mb-4">About</h1>
-                            <p className="sub-heading mb-4">Hello, Welcome To My Portfolio
-                                 </p>
-                            <Link  to="contact"
-    spy={true}
-    smooth={true}
-    offset={-70}
-    duration={500} className="btn btn-slider pink-btn rounded-pill">Contact Now</Link>
+                          
+                           
                         </div>
                     </div>
                 </div>
+                <div className="col-lg-12 col-md-12 col-sm-12 text-center">
+                <p className="sub-heading mb-4" style={{textAlign: 'justify'}}>I will Create Creative Social Media Campaigns for Your Brand. I'm a Designer that helps companies establish their identities 
+by providing modern and creative designing solutions. I have always been creative and have a keen eye for details. 
+I love everything that has to do with Graphic Design, Banner design, Photo Retouch, Photo Editing and Social Media Post, etc. 
+I have grown in the industry, and hope to continue this growth with my commitment to producing high quality and creative work.
+                                 </p>
+                               
+                </div>
             </div>
 
-            <div className="row mt-90">
+            <div className="row mt-20">
                 <div className="col-12 col-md-4 mb-3 mb-md-0">
                     <div className="card box text-center">
                         <div className="feature-icon text-center">
                             <i className="far fa-lightbulb"></i>
                         </div>
                         <div className="card-body">
-                            <p className="card-text sub-heading text-black">We have some creative ideas for you.</p>
+                            <p className="card-text sub-heading text-black">I have some creative ideas for you.</p>
                         </div>
                     </div>
                 </div>
@@ -105,12 +163,21 @@ const Home = () => {
                             <i className="far fa-heart"></i>
                         </div>
                         <div className="card-body">
-                            <p className="card-text sub-heading text-black">We love our valued customers.</p>
+                            <p className="card-text sub-heading text-black">Take Care of my valuable customers.</p>
                         </div>
                     </div>
 
                 </div>
             </div>
+            <div className="row mt-20">
+            <div className="col-lg-12 col-md-12 col-sm-12 text-center">
+            <Link  to="contact"
+    spy={true}
+    smooth={true}
+    offset={-70}
+    duration={500} className="btn btn-slider pink-btn rounded-pill">Contact Now</Link>
+        </div>
+        </div>
         </div>
 </section>
 
@@ -122,9 +189,8 @@ const Home = () => {
                         <div className="stats-text">
                             <div className="home-text text-black">
                                 <h1 className="sub-heading">Let us show you some stats</h1>
-                                <h1 className="main-heading mt-3 mb-4">We have done great stuff over the past few years.</h1>
-                                <p className="sub-heading mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                    aliqua</p>
+                                <h1 className="main-heading mt-3 mb-4">I have done great stuff over the past few years.</h1>
+                                <p className="sub-heading mb-3"></p>
                             </div>
                         </div>
                     </div>
@@ -189,100 +255,29 @@ const Home = () => {
 
 
 
-<section id="design" className="design">
-<div className="container">
-        <div className="row">
-            <div className="col-12 col-md-8 col-lg-6">
-        <div className="stats-text pl-3 pl-md-5">
-            <div className="home-text text-black">
-                <h1 className="sub-heading">Let us make you happy with</h1>
-                <h1 className="main-heading mt-3 mb-4"><span className="text-yellow">Robust Design</span> and Development Solutions</h1>
-                <p className="sub-heading mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod tempor incididunt ut
-                    aliq. Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                <Link to="contact"
-    spy={true}
-    smooth={true}
-    offset={-70}
-    duration={500} className="btn btn-main pink-btn rounded-pill mt-3">Contact Now</Link>
-            </div>
-        </div>
-        </div>
-        </div>
-    </div>
 
-    <svg className="right-square team" viewBox="0 0 280 655" xmlns="http://www.w3.org/2000/svg">
-        <rect  x = "0" y = "32" width = "1616" height = "1616" rx="48" ry="48" fill="#ffc107" transform = "rotate(-45 310 100)"/>
-    </svg>
-    <svg className="right-square team small-view" viewBox="0 0 280 655" xmlns="http://www.w3.org/2000/svg">
-        <rect  x = "0" y = "32" width = "1616" height = "1616" rx="48" ry="48" fill="#fa2851" transform = "rotate(-45 310 100)"/>
-    </svg>
-
-</section>
 
 <Portfolio />
 <section id="testimonial" className="testimonial">
     <div className="container">
         <div className="row">
             <div className="col-12 col-md-8 col-lg-6">
-            <h1 className="main-heading mt-3 mb-4">Latest Graphics <br />Design Trens and News</h1>
-                        <p className="sub-heading mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod tempor incididunt ut
-                            aliq. Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            <h1 className="main-heading mt-3 mb-4">Latest Graphics <br />Design Trends and News</h1>
+                        <p className="sub-heading mb-3"></p>
                
 
                 <div className="row mt-40">
                 <div className="col-lg-12 col-md-12 offset-md-0 p-0">
-                    <div className="blog-owl owl-carousel owl-theme no-gutters blog-area" id="blog-carousal">
-
-                        <div className="item blog-item">
-                            <div className="blog-img">
-                                <Link to="assests/standalone.html">
-                                    <img src="https://megaone.acrothemes.com/digital-marketing/img/blog1.jpg" alt="blog img" /></Link>
-                            </div>
-
-                            <div className="blog-text text-center text-md-left">
-                                <div className="date mb-2">
-                                    <p className="text-red">May27, 2020</p>
-                                </div>
-                                <div className="info-blog">
-                                    <Link to="assests/standalone.html"><h4>Web design is fun</h4></Link>
-                                </div>
-                                <div className="blog-description mb-3">
-                                    <p className="sub-heading">Lorem ipsum dolor sit amet, consadipi. Ut enim adipiscing elit, sed do tempor.</p>
-                                </div>
-                                <div className="writer d-flex">
-                                    <div className="writer-img">
-                                        <img src="https://megaone.acrothemes.com/digital-marketing/img/blog1-writer.jpg" alt="img" />
-                                    </div>
-                                    <p className="writer-name font-italic ml-3">David Villas</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="item blog-item">
-                            <div className="blog-img">
-                                <Link to="assests/standalone.html">
-                                    <img src="https://megaone.acrothemes.com/digital-marketing/img/blog2.jpg" alt="blog img" /></Link>
-                            </div>
-
-                            <div className="blog-text text-center text-md-left">
-                                <div className="date mb-2">
-                                    <p className="text-red">June14, 2020</p>
-                                </div>
-                                <div className="info-blog">
-                                    <Link to="assests/standalone.html"><h4>Future of websites</h4></Link>
-                                </div>
-                                <div className="blog-description mb-3">
-                                    <p className="sub-heading">Lorem ipsum dolor sit amet, consadipi. Ut enim adipiscing elit, sed do tempor.</p>
-                                </div>
-                                <div className="writer d-flex">
-                                    <div className="writer-img">
-                                        <img src="https://megaone.acrothemes.com/digital-marketing/img/blog2-writer.jpg" alt="img" />
-                                    </div>
-                                    <p className="writer-name font-italic ml-3">Lisa Jhonson</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
+                
+                    <Carousel autoPlay={true}
+  autoPlaySpeed={5000} responsive={responsive}
+  keyBoardControl={true}
+  customTransition="all .5"
+  transitionDuration={500}  itemClass="item blog-item" containerClass="custom-slider blog-owl no-gutters blog-area">
+                    {latestNews.map((data1) => <News data={data1} key={data1._id.toString()} />).reverse()}
+                    </Carousel>
+                   
                 
             </div>
                 </div>
@@ -293,7 +288,7 @@ const Home = () => {
     </div>
 
     <svg className="right-square test" viewBox="0 0 312 600" xmlns="http://www.w3.org/2000/svg">
-        <rect  x = "0" y = "32" width = "1616" height = "1616" rx="48" ry="48" fill="#fa2851" transform = "rotate(-45 310 100)"/>
+        <rect  x = "0" y = "32" width = "1616" height = "1616" rx="48" ry="48" fill="#ffc107" transform = "rotate(-45 310 100)"/>
     </svg>
 
     <svg className="left-square gallery small-view" viewBox="0 0 310 655" xmlns="http://www.w3.org/2000/svg">

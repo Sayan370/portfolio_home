@@ -2,12 +2,15 @@ import React,{useState,useEffect} from 'react'
 import axios from 'axios';
 import PortfolioContent from '../portfolioContent/PortfolioContent';
 import env from "react-dotenv";
-
+import { Grid, Row } from 'rsuite';
+import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox";
 const Portfolio = () => {
 
   
       const [category, setCategory] = useState([]);
+      const [staticportfolio, setStaticPortfolio] = useState([]);
       const [portfolio, setPortfolio] = useState([]);
+      const [selectedActive, setSelectedActive] = useState('All');
 
 
       
@@ -26,6 +29,7 @@ const Portfolio = () => {
         const result = await axios(`${env.API_URL}portfolio/records/`);
 
        
+        setStaticPortfolio(result.data);
         setPortfolio(result.data);
        
       };
@@ -62,6 +66,31 @@ const Portfolio = () => {
       
         }
 
+       const handleClick=(ids) => {
+            let filterCoffee = [];
+            if (ids === "All") {
+                setPortfolio(staticportfolio);
+            } else {
+
+                
+                if(staticportfolio.length>0){
+                let demo=staticportfolio
+               
+            filterCoffee = demo.filter(
+             portfolios => portfolios.category === ids
+             );
+             
+             setPortfolio(filterCoffee);
+
+            }
+
+          
+
+            }
+            setSelectedActive(ids)
+
+          }
+
 
 
     return (
@@ -71,23 +100,33 @@ const Portfolio = () => {
             <div className="row">
                 <div className="col-lg-6 wow fadeInUp" data-wow-delay="300ms">
                     <div className="ex-detail">
-                        <h1 className="main-heading">Our<br/>
+                        <h1 className="main-heading">My<br/>
                             Amazing Work
                         </h1>
                     </div>
                 </div>
                 <div className="col-md-12 pt-5">
                     <div id="js-filters-mosaic" className="cbp-l-filters-button wow fadeInUp" data-wow-delay="350ms">
-                        <div data-filter="*" className="cbp-filter-item-active cbp-filter-item"> ALL</div>
-                        {category.map((data) => <div key={data._id.toString()} data-filter={"."+data._id} className="cbp-filter-item">{data.title}</div>)}
+                        <div data-filter="*" className={selectedActive==='All' ? 'cbp-filter-item-active cbp-filter-item' : 'cbp-filter-item'} onClick={() =>handleClick('All')}> ALL</div>
+                        {category.map((data) => <div key={data._id.toString()} data-filter={"."+data._id} onClick={() =>handleClick(data._id)} className={selectedActive===data._id ? 'cbp-filter-item-active cbp-filter-item' : 'cbp-filter-item'}>{data.title}</div>)}
                         
                        
                     </div>
 
-                    <div id="js-grid-mosaic" className="cbp cbp-l-grid-mosaic">
+                    <div className="abc">
 
-                    {portfolio.map((data1) => <PortfolioContent data={data1} key={data1._id.toString()} />)}
-
+                    <Grid fluid>
+    <Row className="show-grid">
+    <SimpleReactLightbox>
+    <SRLWrapper>
+                    {portfolio.map((data1) => <PortfolioContent data={data1} key={data1._id.toString()} />).reverse()}
+</SRLWrapper>
+                    </SimpleReactLightbox>
+                    </Row>
+                    </Grid>
+   
+   
+    
                       
                     </div>
 

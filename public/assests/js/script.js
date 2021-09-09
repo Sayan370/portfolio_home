@@ -15,7 +15,21 @@ jQuery(window).on("load", function () {
 /* ===================================
        Side Menu
    ====================================== */
+   jQuery(window).on("load", function () {
+if ($("#sidemenu_toggle").length) {
+    $("#sidemenu_toggle").on("click", function () {
+        $(".pushwrap").toggleClass("active");
+        $(".side-menu").addClass("side-menu-active"), $("#close_side_menu").fadeIn(700)
+    }), $("#close_side_menu").on("click", function () {
+        $(".side-menu").removeClass("side-menu-active"), $(this).fadeOut(200), $(".pushwrap").removeClass("active")
+    }), $(".side-nav .navbar-nav").on("click", function () {
+        $(".side-menu").removeClass("side-menu-active"), $("#close_side_menu").fadeOut(200), $(".pushwrap").removeClass("active")
+    }), $("#btn_sideNavClose").on("click", function () {
+        $(".side-menu").removeClass("side-menu-active"), $("#close_side_menu").fadeOut(200), $(".pushwrap").removeClass("active")
+    });
+}
 
+   });
 
 
 // Navbar Scroll Function
@@ -164,21 +178,6 @@ $('video, audio').mediaelementplayer({
 //******************GALLERY CUBE PORTFOLIO *******************
 // Cube Portfolio Initializing
 jQuery(window).on("load", function () {
-
-    if ($("#sidemenu_toggle").length) {
-        $("#sidemenu_toggle").on("click", function () {
-    
-         
-            $(".pushwrap").toggleClass("active");
-            $(".side-menu").addClass("side-menu-active"), $("#close_side_menu").fadeIn(700)
-        }), $("#close_side_menu").on("click", function () {
-            $(".side-menu").removeClass("side-menu-active"), $(this).fadeOut(200), $(".pushwrap").removeClass("active")
-        }), $(".side-nav .navbar-nav").on("click", function () {
-            $(".side-menu").removeClass("side-menu-active"), $("#close_side_menu").fadeOut(200), $(".pushwrap").removeClass("active")
-        }), $("#btn_sideNavClose").on("click", function () {
-            $(".side-menu").removeClass("side-menu-active"), $("#close_side_menu").fadeOut(200), $(".pushwrap").removeClass("active")
-        });
-    }
 $('#js-grid-mosaic').cubeportfolio({
     filters: '#js-filters-mosaic',
     layoutMode: 'grid',
