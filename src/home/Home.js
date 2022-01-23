@@ -258,7 +258,7 @@ I have grown in the industry, and hope to continue this growth with my commitmen
 
 
 <Portfolio />
-<section id="testimonial" className="testimonial">
+<section id="testimonial"  className="testimonial">
     <div className="container">
         <div className="row">
             <div className="col-12 col-md-8 col-lg-6">

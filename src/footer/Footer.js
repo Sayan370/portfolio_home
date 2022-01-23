@@ -84,7 +84,7 @@ const handleChange = (e) => {
                             </div>
 
                             <div className="form-group ">
-                                <input className="form-control" type="tel" name="phone" placeholder="Phone" id="user_subject" value={newUser.phone} onChange={handleChange}  />
+                                <input className="form-control" type="tel" name="phone" placeholder="Phone" id="user_subject" value={newUser.phone} onChange={handleChange} required />
                             </div>
                             </div>
 
