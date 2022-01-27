@@ -1,5 +1,4 @@
 import React from 'react'
-import env from "react-dotenv";
 
 const News = ({data}) => {
     const datex=new Date(data.date_added);
@@ -11,7 +10,7 @@ const News = ({data}) => {
 <div>
                             <div className="blog-img">
                                 <a href={ data.url} target="_blank" rel="noreferrer">
-                                    <img src={`${env.IMG_URL}images/` + data.photo} alt="blog img" /></a>
+                                    <img src={data.photo} alt="blog img" /></a>
                             </div>
 
                             <div className="blog-text text-center text-md-left">

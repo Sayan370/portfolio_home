@@ -12,10 +12,10 @@ const [catTitle,setCattitle]=useState(null);
         he4(data.category);
 
       
-  
+       
+      
 
       },[data.category]);
-
 
 
 
@@ -63,9 +63,9 @@ const [catTitle,setCattitle]=useState(null);
 <Col xs={24} sm={12} md={12} className={data.category}>
 
          
-                            <a href={`${env.IMG_URL}images/` + data.photo} className=" cbp-lightbox">
+                            <a href={data.photo} className=" cbp-lightbox">
                                 <div className="cbp-caption-defaultWrap">
-                                    <img src={`${env.IMG_URL}images/` + data.photo} alt={data.title+" by Akash Bhattacharjee"} className="portfolio-img" />
+                                    <img src={data.photo} alt={data.title+" by Akash Bhattacharjee"} className="portfolio-img" />
                                 </div>
                                 <div className="cbp-caption-activeWrap portfolio-hover-effect d-flex align-items-end">
                                     <div className="hover-text">

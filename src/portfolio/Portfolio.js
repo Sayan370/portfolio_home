@@ -26,11 +26,23 @@ const Portfolio = () => {
   
   
       const fetch=async() => {
-        const result = await axios(`${env.API_URL}portfolio/records/`);
+        // eslint-disable-next-line no-unused-vars
+        const result = await axios(`${env.API_URL}portfolio/records/`).then((results) => {
+            results.data.forEach((d)=>{
+                let myArray = d.photo.split("file/d/");
+                let photosUrl= myArray[1].split("/view");
+                d.photo=`https://drive.google.com/uc?export=view&id=${photosUrl[0]}`;
 
-       
-        setStaticPortfolio(result.data);
-        setPortfolio(result.data);
+            });
+           
+            setStaticPortfolio(results.data);
+            setPortfolio(results.data);
+
+        }).catch((err)=>{
+
+            console.log(err.message,4000);
+
+        });
        
       };
 
