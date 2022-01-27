@@ -10,14 +10,8 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
 
-const Home = () => {
-
-  
-  
+const Home = () => {  
     const [latestNews, setLatestNews] = useState([]);
-   
-
-    
     useEffect(() => {
      
       fetch();
@@ -30,23 +24,11 @@ const Home = () => {
 
 
     const fetch=async() => {
-      // eslint-disable-next-line no-unused-vars
-      const result = await axios(`${env.API_URL}news/records/`).then((results)=>{
-
-        results.data.forEach((d)=>{
-            let myArray = d.photo.split("file/d/");
-            let photosUrl= myArray[1].split("/view");
-            d.photo=`https://drive.google.com/uc?export=view&id=${photosUrl[0]}`;
-
-        });
-
-        setLatestNews(results.data);
-
-      });
+      const result = await axios(`${env.API_URL}news/records/`);
 
      
      
-     
+      setLatestNews(result.data);
      
     };
 
